@@ -5,7 +5,6 @@ phases:
     commands: -npm install
   build:
     commands: -npm run build
-post_build:
-commnds:
-  -aws s3 cp --recursive .build s3://oleg-react-deployment
+  post_build:
+    commands: -aws s3 cp --recursive .build s3://oleg-react-deployment
   # -aws cloudfront create-invalidation --distribution-id
