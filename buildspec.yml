@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands: -npm install
+  build:
+  commnds: -npm run build
+post_build:
+commnds:
+  -aws s3 cp --recursive .build s3://oleg-react-deployment
+  # -aws cloudfront create-invalidation --distribution-id
